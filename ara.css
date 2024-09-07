@@ -1,12 +1,11 @@
 .btn{
-    text-decoration: none;
-    border: 3px solid #2ecc71;
+    text-decoration:none;
+    border: 3px solid #6c5ce7;
     padding: 5px;
     border-radius: 10px;
-    color: #16a085;
+    color: black;
 }
 .btn:hover{
-    background-color: black;
-    color:blue;
+    background-color: #00cec9;
+    color:#2d3436;
 }
-
