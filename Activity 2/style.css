@@ -1,11 +1,46 @@
 body {
-  background-color: #f8f9fa;
+  background-color: #f5f0e1; 
+  color: #4a3b2d; 
+  font-family: 'Georgia', serif; 
 }
 
-.container {
-  max-width: 900px;
+h2 {
+  color: #0a0a0a; 
 }
 
-.card-header {
-  font-weight: bold;
+.card {
+  background-color: #fff8e1; 
+  border: 1px solid #d1c4b1; 
+}
+
+.btn-primary {
+  background-color: #a77b3c; 
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #c08e5a; 
+}
+
+.btn-secondary {
+  background-color: #ab7d6a; 
+  border: none;
+}
+
+.btn-danger {
+  background-color: #c34a4a; 
+  border: none;
+}
+
+.btn-danger:hover {
+  background-color: #d56e6e;
+}
+
+.list-group-item {
+  background-color: #f8e8d0; 
+  border: 1px solid #d1c4b1; 
+}
+
+.list-group-item:hover {
+  background-color: #e9d8c3; 
 }
