@@ -1,33 +1,26 @@
-require('dotenv').config()
+require('dotenv').config();
+const express = require('express');
+const mongoose = require('mongoose');
+const cors = require('cors');
+const workoutRoutes = require('./routes/workouts');
 
-const express = require('express')
+// express app
+const app = express();
 
-const mongoose = require('mongoose')
-const workoutRoutes = require('./routes/workouts')
+// middleware
+app.use(express.json());
+app.use(cors()); // Enable CORS for frontend communication
 
-//express app
-const app = express()
+// routes
+app.use('/api/workouts', workoutRoutes);
 
-//middleware
-app.use(express.json())
-
-app.use((req, res, next) =>{
-    console.log(req.path, req.method)
-    next()
-})
-
-
-//routes
-app.use('/api/workouts', workoutRoutes)
-
-
-//connect to db
+// connect to MongoDB
 mongoose.connect(process.env.MONGO_URI)
-    .then(() =>{
+    .then(() => {
         app.listen(process.env.PORT, () => {
-            console.log('Listening in port', process.env.PORT)
-        })
+            console.log(`Server is running on port ${process.env.PORT}`);
+        });
     })
-    .catch((error) =>{
-        console.log(error)
-    })
+    .catch((error) => {
+        console.error("Error connecting to MongoDB:", error);
+    });
